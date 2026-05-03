@@ -2,10 +2,10 @@ class Task {
   int? id;
   String title;
   String description;
-  String scheduledDate; // Armazenada "yyyy-MM-dd"
+  String scheduledDate; // Armazenada  "yyyy-MM-dd"
   bool important;
   bool completed;
-  String category; 
+  String category; // Atributo extra: categoria da tarefa
 
   Task({
     this.id,

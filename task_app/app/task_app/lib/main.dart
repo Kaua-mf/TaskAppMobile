@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/task_provider.dart';
+import 'screens/welcome_screen.dart';
 import 'screens/task_list_screen.dart';
 import 'screens/task_detail_screen.dart';
 import 'screens/task_form_screen.dart';
@@ -28,6 +29,11 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          centerTitle: false,
+          elevation: 0,
+          scrolledUnderElevation: 1,
+        ),
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -35,10 +41,17 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          centerTitle: false,
+          elevation: 0,
+          scrolledUnderElevation: 1,
+        ),
       ),
       themeMode: ThemeMode.system,
-      initialRoute: '/tasks',
+      // Rotas nomeadas (requisito 7)
+      initialRoute: '/welcome',
       routes: {
+        '/welcome': (_) => const WelcomeScreen(),
         '/tasks': (_) => const TaskListScreen(),
         '/task-detail': (_) => const TaskDetailScreen(),
         '/task-form': (_) => const TaskFormScreen(),
